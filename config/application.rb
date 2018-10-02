@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module TestGuru
   def self.version
-    '0.1.1'
+    '0.2.0'
   end
 
   class Application < Rails::Application
