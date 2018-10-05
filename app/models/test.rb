@@ -9,6 +9,8 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
+  scope :by_levels, ->(*levels) { where(level: levels) }
+
   def self.by_category(category)
     joins(:category).where(categories: { title: category }).order('title DESC')
   end
