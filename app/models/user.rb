@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :tests, through: :tests_users
 
   def test_list(*levels)
-    tests.where(level: levels)
+    tests.by_levels(levels)
   end
 end

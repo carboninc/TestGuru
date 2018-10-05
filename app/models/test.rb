@@ -11,7 +11,7 @@ class Test < ApplicationRecord
 
   scope :by_levels, ->(*levels) { where(level: levels) }
 
-  def self.by_category(category)
+  scope :by_category, lambda { |category|
     joins(:category).where(categories: { title: category }).order('title DESC')
-  end
+  }
 end
