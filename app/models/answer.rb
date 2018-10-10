@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def answers_count
-    errors.add(:answers, 'У вопроса не может быть более 4 ответов') if question.answers.length <= 4
+    errors.add(:answers, 'У вопроса не может быть более 4 ответов') if Question.answers.length >= 4
   end
 end
