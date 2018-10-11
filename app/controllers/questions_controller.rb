@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create]
   before_action :find_question, only: %i[show destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+
   def index
     questions = @test.questions.pluck(:body)
     render plain: questions.join("\n")
@@ -31,5 +33,9 @@ class QuestionsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
+  end
+
+  def rescue_with_question_not_found
+    render plain: 'Такой вопрос не найден.'
   end
 end
