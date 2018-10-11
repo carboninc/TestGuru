@@ -15,10 +15,12 @@ class QuestionsController < ApplicationController
 
   def create
     @test.questions.create(question_params)
+    render plain: 'Вопрос создан'
   end
 
   def destroy
     @question.destroy
+    render plain: 'Вопрос удален'
   end
 
   private
