@@ -14,8 +14,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @test.questions.create(question_params)
-    render plain: 'Вопрос создан'
+    @question = @test.questions.create(question_params)
+    if @question.save
+      render plain: 'Вопрос создан'
+    else
+      render plain: 'Ошибка, не заполнены данные'
+    end
   end
 
   def destroy
