@@ -4,6 +4,10 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    "https://github.com/#{author}/#{repo}"
+    content_tag(:a, repo, href: "https://github.com/#{author}/#{repo}", target: '_blank')
+  end
+
+  def github_url_profile(author, fullname)
+    content_tag(:a, fullname, href: "https://github.com/#{author}", target: '_blank')
   end
 end
