@@ -1,0 +1,8 @@
+<tr>
+  <td><%= test.id %></td>
+  <td><%= test.title %></td>
+  <td><%= test.questions.count %></td>
+  <td><%= test.level %></td>
+  <td><%= test.category.title %></td>
+  <td><%= link_to 'Посмотреть вопросы', test_path(test) %></td>
+</tr>
