@@ -15,6 +15,16 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def percentage_success
+    (correct_questions.to_f / test.questions.count * 100).round
+  end
+
+  def test_passed?
+    return true if percentage_success >= 85
+
+    false
+  end
+
   private
 
   def before_validation_set_first_question
