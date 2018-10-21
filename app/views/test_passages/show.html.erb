@@ -5,7 +5,7 @@
 </b>
 
 <p>
-  Вопрос <%= @test_passage.current_question_id %> из <%= @test_passage.test.questions.count %>.
+  Вопрос <%= @test_passage.num_of_current_question %> из <%= @test_passage.test.questions.count %>.
 </p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
