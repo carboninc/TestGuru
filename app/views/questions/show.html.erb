@@ -1,3 +1,5 @@
+<h1>Вопрос к тесту <%= @question.test.title %></h1>
+
 <table>
   <tr>
     <th>ID</th>
@@ -14,5 +16,13 @@
     <td><%= link_to 'Удалить', question_path(@question), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
 </table>
+
+<h2>Ответы:</h2>
+
+<%= link_to 'Новый ответ', new_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
 
 <%= link_to 'Назад', test_questions_path(@question.test_id) %>
