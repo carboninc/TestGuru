@@ -10,4 +10,8 @@ module ApplicationHelper
   def github_url_profile(author, fullname)
     link_to(fullname, "https://github.com/#{author}", target: '_blank')
   end
+
+  def flash_message(type)
+    content_tag :p, flash[type], class: 'flash alert'
+  end
 end
