@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
     unless current_user
       redirect_to login_path, alert: 'Вы Гуру? Пожалуйста, укажите свой email и пароль'
     end
-
-    cookies[:email] = current_user&.email
   end
 
   def current_user
