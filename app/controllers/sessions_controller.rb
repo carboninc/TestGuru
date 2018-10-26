@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:current_path]
+      redirect_to cookies[:current_path] ||= root_path
       cookies.delete(:current_path)
     else
       flash.now[:alert] = 'Вы Гуру? Пожалуйста, укажите свой email и пароль'
