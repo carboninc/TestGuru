@@ -3,15 +3,15 @@
     <%= link_to 'TestGuru', root_path %>
   </div>
 
-  <% if logged_in? %>
+  <% if user_signed_in? %>
     <ul>
       <li>Привет <b><%= current_user.email %></b></li>
-      <li><%= link_to 'Выход', logout_path %></li>
+      <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
     </ul>
   <% else %>
     <ul>
-      <li><%= link_to 'Вход', login_path %></li>
-      <li><%= link_to 'Регистрация', signup_path %></li>
+      <li><%= link_to 'Вход', new_user_session_path %></li>
+      <li><%= link_to 'Регистрация', new_user_registration_path %></li>
     </ul>
   <% end %>
 </nav>
