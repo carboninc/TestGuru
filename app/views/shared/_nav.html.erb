@@ -1,0 +1,18 @@
+<nav>
+  <div class="logo">
+    <%= link_to 'TestGuru', root_path %>
+  </div>
+
+  <% if logged_in? %>
+    <ul>
+      <li>Привет <b><%= current_user.email %></b></li>
+      <li><%= link_to 'Выход', logout_path %></li>
+    </ul>
+  <% else %>
+    <ul>
+      <li><%= link_to 'Вход', login_path %></li>
+      <li><%= link_to 'Регистрация', signup_path %></li>
+    </ul>
+  <% end %>
+</nav>
+
