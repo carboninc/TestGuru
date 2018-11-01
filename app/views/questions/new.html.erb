@@ -1,3 +1,5 @@
+<h1>Создать новый вопрос для теста: <%= @test.title %></h1>
+
 <%= render 'form' %>
 
-<%= link_to 'Назад', test_questions_path(@test) %>
+<%= link_to 'Назад', admin_test_path(@test) %>

@@ -11,7 +11,9 @@ module ApplicationHelper
     link_to(fullname, "https://github.com/#{author}", target: '_blank')
   end
 
-  def flash_message(type)
-    content_tag :p, flash[type], class: 'flash alert'
+  def flash_message
+    flash.map do |key, message|
+      content_tag :p, message, class: "flash #{key}"
+    end.join.html_safe
   end
 end
