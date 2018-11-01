@@ -31,6 +31,9 @@
 
 ---
 ru:
+  tests:
+    index:
+      header: "Тесты"
   activerecord:
     errors:
       messages:
