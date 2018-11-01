@@ -34,12 +34,18 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
   admin:
     tests:
       create:
         success: "Тест успешно создан"
       index:
         header: "Доступные тесты"
+
   helpers:
     submit:
       test:
@@ -50,6 +56,19 @@ ru:
         title: "Название теста"
         level: "Уровень сложности"
         category_id: "Категория"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест TestGuru!"
+
   date:
     abbr_day_names:
     - Вс
