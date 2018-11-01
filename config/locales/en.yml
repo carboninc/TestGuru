@@ -32,4 +32,20 @@
 en:
   tests:
     index:
-      header: "Tests"
+      header: "Available tests"
+  admin:
+    tests:
+      create:
+        success: "Test created successfully"
+      index:
+        header: "Available tests"
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Test name"
+        level: "Level of difficulty"
+        category_id: "Category"

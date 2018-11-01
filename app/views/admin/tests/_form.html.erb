@@ -17,11 +17,6 @@
   </div>
 
   <div>
-    <%= form.label :user_id %>
-    <%= form.collection_select :user_id, Admin.all, :id, :email, prompt: true %>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>
