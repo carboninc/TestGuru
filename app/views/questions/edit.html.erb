@@ -1,3 +1,5 @@
+<h1>Редактирование вопроса: <%= @question.test.title %></h1>
+
 <%= render 'form' %>
 
-<%= link_to 'Назад', question_path %>
+<%= link_to 'Назад', admin_test_path(@question.test) %>

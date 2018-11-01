@@ -1,4 +1,6 @@
-<h1><%= @test.title %></h1>
+<h1><b>Тест:</b> <%= @test.title %></h1>
+
+<h3>Уровень: <%= @test.level %></h3>
 
 <h3>Вопросы теста:</h3>
 
@@ -11,7 +13,7 @@
     <th colspan="3">Действия</th>
   </tr>
 
-  <%= render @test.questions %>
+  <%= render partial: 'questions/question', collection: @test.questions %>
 </table>
 
-
+<%= link_to 'Назад', admin_tests_path %>
