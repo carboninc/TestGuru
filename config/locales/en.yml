@@ -94,6 +94,8 @@ en:
         title: "Test name"
         level: "Level of difficulty"
         category_id: "Category"
+    select:
+      prompt: 'Choose an available option: '
 
   shared:
     errors:

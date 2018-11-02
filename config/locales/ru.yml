@@ -96,6 +96,8 @@ ru:
         title: "Название теста"
         level: "Уровень сложности"
         category_id: "Категория"
+    select:
+      prompt: 'Выберите доступный вариант: '
 
   shared:
     errors:
