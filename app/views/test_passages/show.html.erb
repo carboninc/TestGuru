@@ -1,11 +1,11 @@
-<h1>Пройти тест: <%= @test_passage.test.title %></h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <b>
   <%= @test_passage.current_question.body %>
 </b>
 
 <p>
-  Вопрос <%= @test_passage.num_of_current_question %> из <%= @test_passage.test.questions.count %>.
+  <%= t('.test_progress', current_question: @test_passage.num_of_current_question, count: @test_passage.test.questions.count) %>
 </p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
@@ -17,6 +17,6 @@
   <% end %>
 
   <div>
-    <%= form.submit 'Следующий вопрос' %>
+    <%= form.submit t('.next') %>
   </div>
 <% end %>

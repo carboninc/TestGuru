@@ -1,19 +1,19 @@
-<h1><b>Тест:</b> <%= @test.title %></h1>
+<h1><%= raw t('.header', title: @test.title) %></h1>
 
-<h3>Уровень: <%= @test.level %></h3>
+<h3><%= t('.level', level: @test.level) %></h3>
 
-<h3>Вопросы теста:</h3>
+<h3><%= t('.test_questions') %></h3>
 
-<%= link_to 'Создать новый вопрос', new_test_question_path(@test) %>
+<%= link_to t('.create'), new_test_question_path(@test) %>
 
 <table>
   <tr>
     <th>ID</th>
-    <th>Вопрос</th>
-    <th colspan="3">Действия</th>
+    <th><%= t('.question') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
   </tr>
 
   <%= render partial: 'questions/question', collection: @test.questions %>
 </table>
 
-<%= link_to 'Назад', admin_tests_path %>
+<%= link_to t('.back'), admin_tests_path %>

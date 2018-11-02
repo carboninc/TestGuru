@@ -7,7 +7,7 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, uniqueness: {
     scope: :level,
-    message: 'Название и уровень теста должны быть уникальны'
+    message: :must_be_uniq
   }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
