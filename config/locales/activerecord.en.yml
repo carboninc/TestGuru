@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+    attributes:
+      test:
+        title: "Title"
+    errors:
+      messages:
+        blank: "can't be blank"
+      models:
+        test:
+          attributes:
+            title:
+              must_be_uniq: " and level must be unique."

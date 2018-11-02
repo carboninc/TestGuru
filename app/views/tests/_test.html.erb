@@ -4,5 +4,5 @@
   <td><%= test.questions.count %></td>
   <td><%= test.level %></td>
   <td><%= test.category.title %></td>
-  <td><%= button_to 'Пройти тест', start_test_path(test) %></td>
+  <td><%= button_to t('.start'), start_test_path(test) %></td>
 </tr>

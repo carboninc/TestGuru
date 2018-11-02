@@ -1,13 +1,13 @@
-<h1>Тесты</h1>
+<h1><%= t('tests.index.header') %></h1>
 
 <table>
   <tr>
     <th>ID</th>
-    <th>Тест</th>
-    <th>Кол-во вопросов</th>
-    <th>Уровень сложности</th>
-    <th>Категория</th>
-    <th>Действия</th>
+    <th><%= t('.test') %></th>
+    <th><%= t('.number_if_question') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.actions') %></th>
   </tr>
 
   <%= render @tests %>

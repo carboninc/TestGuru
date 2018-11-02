@@ -30,4 +30,79 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  tests:
+    index:
+      header: "Available tests"
+      test: "Test"
+      number_of_question: "Number of question"
+      level: "Level of difficulty"
+      category: "Category"
+      actions: "Actions"
+    test:
+      start: "Start test"
+
+  test_passages:
+    result:
+      header: "Test %{title} successfully completed!"
+      success: "Correct answers <span class='success'>%{percentage_success}%</span>. Congratulations test successfully passed!"
+      failed: "Correct answers <span class='failed'>%{percentage_success}%</span>. Test failed, try again."
+      back: "Back to test list"
+    show:
+      header: "Take the %{title} test"
+      test_progress: "Question %{current_question} of %{count}"
+      next: "Next question"
+
+  admin:
+    tests:
+      create:
+        success: "Test created successfully"
+      index:
+        header: "Available tests"
+        new_test: 'Create a new test'
+        test: "Test"
+        number_of_question: "Number of question"
+        level: "Level of difficulty"
+        category: "Category"
+        actions: "Actions"
+      test:
+        show_questions: "Show questions"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure?"
+      edit:
+        header: "Edit %{title} test"
+        back: "Back"
+      new:
+        header: "Create a new test"
+        back: "Back"
+      show:
+        header: "<b>Test:</b> %{title}"
+        level: "Level: %{level}"
+        test_questions: "Test questions:"
+        create: "Create a new question"
+        question: "Question"
+        actions: "Actions"
+        back: "Back"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Test name"
+        level: "Level of difficulty"
+        category_id: "Category"
+    select:
+      prompt: 'Choose an available option: '
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
