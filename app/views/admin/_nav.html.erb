@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-light">
-  <%= link_to 'Административная панель TestGuru', root_path, class: 'navbar-brand' %>
+  <%= link_to 'Административная панель TestGuru', admin_tests_path, class: 'navbar-brand' %>
   <span class="navbar-text">
     Привет, <b><%= current_user.email %></b> | 
     <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
