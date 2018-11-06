@@ -13,11 +13,12 @@
   </head>
 
   <body>
-    <%= flash_message %>
-
     <%= render 'shared/nav' %>
 
-    <%= yield %>
+    <div class="container">
+      <%= flash_message %>
+      <%= yield %>
+    </div>
 
     <%= render 'shared/footer' %>
   </body>

@@ -1,18 +1,11 @@
-<nav>
-  <div class="logo">
-    <%= link_to 'TestGuru', root_path %>
-  </div>
-
-  <% if user_signed_in? %>
-    <ul>
-      <li>Привет <b><%= current_user.email %></b></li>
-      <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
-    </ul>
-  <% else %>
-    <ul>
-      <li><%= link_to 'Вход', new_user_session_path %></li>
-      <li><%= link_to 'Регистрация', new_user_registration_path %></li>
-    </ul>
-  <% end %>
+<nav class="navbar navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Привет <b><%= current_user.email %></b> | <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Вход', new_user_session_path %> | <%= link_to 'Регистрация', new_user_registration_path %>
+    <% end %>
+  </span>
 </nav>
 
