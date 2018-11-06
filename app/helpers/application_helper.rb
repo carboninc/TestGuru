@@ -13,7 +13,22 @@ module ApplicationHelper
 
   def flash_message
     flash.map do |key, message|
-      content_tag :p, message, class: "flash #{key}"
+      content_tag :div, message, class: flash_class(key)
     end.join.html_safe
+  end
+
+  private
+
+  def flash_class(level)
+    case level
+    when 'notice'
+      'alert alert-info'
+    when 'success'
+      'alert alert-success'
+    when 'error'
+      'alert alert-danger'
+    when 'alert'
+      'alert alert-danger'
+    end
   end
 end

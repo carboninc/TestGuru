@@ -2,6 +2,9 @@
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
   <span class="navbar-text">
     <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to 'Перейти в админ панель', admin_tests_path %> | 
+      <% end %>
       Привет <b><%= current_user.email %></b> | <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to 'Вход', new_user_session_path %> | <%= link_to 'Регистрация', new_user_registration_path %>
