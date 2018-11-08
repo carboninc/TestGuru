@@ -19,16 +19,14 @@ module ApplicationHelper
 
   private
 
+  BOOTSTRAP_FLASH_CLASS_MAPPING = {
+    'notice' => 'info',
+    'success' => 'success',
+    'error' => 'danger',
+    'alert' => 'danger'
+  }.freeze
+
   def flash_class(level)
-    case level
-    when 'notice'
-      'alert alert-info'
-    when 'success'
-      'alert alert-success'
-    when 'error'
-      'alert alert-danger'
-    when 'alert'
-      'alert alert-danger'
-    end
+    "alert alert-#{BOOTSTRAP_FLASH_CLASS_MAPPING[level]}"
   end
 end
