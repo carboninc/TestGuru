@@ -13,7 +13,20 @@ module ApplicationHelper
 
   def flash_message
     flash.map do |key, message|
-      content_tag :p, message, class: "flash #{key}"
+      content_tag :div, message, class: flash_class(key)
     end.join.html_safe
+  end
+
+  private
+
+  BOOTSTRAP_FLASH_CLASS_MAPPING = {
+    'notice' => 'info',
+    'success' => 'success',
+    'error' => 'danger',
+    'alert' => 'danger'
+  }.freeze
+
+  def flash_class(level)
+    "alert alert-#{BOOTSTRAP_FLASH_CLASS_MAPPING[level]}"
   end
 end
