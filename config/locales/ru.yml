@@ -53,6 +53,9 @@ ru:
       header: "Пройти тест: %{title}"
       test_progress: "Вопрос %{current_question} из %{count}"
       next: "Следующий вопрос"
+    gist:
+      success: "Gist успешно сохранен!"
+      failed: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:

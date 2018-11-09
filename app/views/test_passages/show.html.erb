@@ -1,8 +1,8 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
+<p>
+  <b><%= @test_passage.current_question.body %></b>
+</p>
 
 <p>
   <%= t('.test_progress', current_question: @test_passage.num_of_current_question, count: @test_passage.test.questions.count) %>
@@ -17,6 +17,7 @@
   <% end %>
 
   <div>
-    <%= form.submit t('.next') %>
+    <p><%= link_to 'Сохранить вопрос в Gist', gist_test_passage_path(@test_passage), method: :post %></p>
+    <p><%= form.submit t('.next') %></p>
   </div>
 <% end %>

@@ -51,6 +51,9 @@ en:
       header: "Take the %{title} test"
       test_progress: "Question %{current_question} of %{count}"
       next: "Next question"
+    gist:
+      success: "Gist saved successfully!"
+      failed: "An error occurred while saving a gist"
 
   admin:
     tests:
