@@ -52,7 +52,7 @@ en:
       test_progress: "Question %{current_question} of %{count}"
       next: "Next question"
     gist:
-      success: "Gist saved successfully!"
+      success: "Gist saved successfully! <a href='%{gist_url}' target='_blank'>Link</a>"
       failed: "An error occurred while saving a gist"
 
   admin:
@@ -109,3 +109,7 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  services:
+    gist_question_service:
+      description: "Test question: %{title} from TestGuru"
