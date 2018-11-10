@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def flash_message
     flash.map do |key, message|
-      content_tag :div, sanitize(message), class: flash_class(key)
+      content_tag :div, message, class: flash_class(key)
     end.join.html_safe
   end
 
