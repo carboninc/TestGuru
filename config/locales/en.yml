@@ -86,6 +86,8 @@ en:
         question: "Question"
         actions: "Actions"
         back: "Back"
+      form_inline:
+        submit: 'OK'
 
   helpers:
     submit:
