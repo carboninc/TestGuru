@@ -88,6 +88,8 @@ ru:
         question: "Вопрос"
         actions: "Действия"
         back: "Назад"
+      form_inline:
+        submit: 'OK'
 
   helpers:
     submit:
