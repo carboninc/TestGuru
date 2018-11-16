@@ -8,7 +8,7 @@
   <%= t('.test_progress', current_question: @test_passage.num_of_current_question, count: @test_passage.test.questions.count) %>
 </p>
 
-<%= content_tag :div, class: 'progress mb-4', data: { current_progress: @test_passage.num_of_current_question - 1, common_progress: @test_passage.test.questions.count } do %> 
+<%= content_tag :div, class: 'progress mb-4', data: { current_question: @test_passage.num_of_current_question - 1, total_questions: @test_passage.test.questions.count } do %> 
   <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
     0%
   </div>

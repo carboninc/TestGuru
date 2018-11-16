@@ -3,9 +3,9 @@ document.addEventListener('turbolinks:load', function() {
   var progressBar = document.querySelector('.progress-bar');
 
    if (progress) {
-    var current =  progress.dataset.currentProgress;
-    var common =  progress.dataset.commonProgress;
-    var width = Math.round(current / (common / 100)) + '%';
+    var current =  progress.dataset.currentQuestion;
+    var total =  progress.dataset.totalQuestions;
+    var width = Math.round(current / (total / 100)) + '%';
 
     progressBar.style.width = width;
     progressBar.textContent = width;
