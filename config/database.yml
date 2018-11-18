@@ -82,4 +82,4 @@ production:
   <<: *default
   database: Testguru_production
   username: Testguru
-  password: <%= ENV['TOURCENTER2_DATABASE_PASSWORD'] %>
+  password: Rails.application.credentials.db[:password]

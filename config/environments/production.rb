@@ -64,6 +64,26 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "TestGuru_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'testguru777.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.yandex.ru',
+    port: 465,
+    domain: 'yandex.ru',
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    user_name: Rails.application.credentials.yandex_mail[:login],
+    password: Rails.application.credentials.yandex_mail[:password],
+    ssl: true
+  }
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.mailgun.org',
+  #   port: 587,
+  #   domain: Rails.application.credentials.mailgun[:domain],
+  #   authentication: 'plain',
+  #   user_name: Rails.application.credentials.mailgun[:login],
+  #   password: Rails.application.credentials.mailgun[:password]
+  # }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
