@@ -1,8 +1,54 @@
-<nav class="navbar navbar-light bg-light">
-  <%= link_to 'Административная панель TestGuru', admin_tests_path, class: 'navbar-brand' %>
-  <span class="navbar-text">
-    Привет, <b><%= current_user.email %></b> | 
-    <%= link_to 'Выход', destroy_user_session_path, method: :delete %> | 
-    <%= link_to 'Пройти тесты', tests_path %>
-  </span>
+<nav class="navbar navbar-dark bg-dark flex-md-nowrap p-1 shadow">
+  <%= link_to admin_tests_path, class: 'navbar-brand col-sm-3 col-md-2 mr-0' do %>
+    <%= image_tag "main/guru-logo.png", width: 30, height: 30, class: 'd-inline-block align-top', alt: 'Guru Logo' %>
+    Админ панель
+  <% end %>
+  <ul class="nav px-3">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag avatar_url(current_user), class: 'rounded-circle mr-1', width: '30', height: '30', alt: 'avatar' %>
+        <%= current_user.email %><i class="fa fa-angle-down small ml-1"></i>
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to 'Редактировать профиль', edit_user_registration_path, class: 'dropdown-item' %>
+        <div class="dropdown-divider"></div>
+        <%= link_to 'Выход', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+      </div>
+    </li>
+  </ul>
 </nav>
+
+<div class="container-fluid mt-4">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light border-right">
+      <div class="sidebar-sticky">
+        <h3>Меню</h3>
+        <hr>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <%= link_to tests_path, class: 'nav-link' do %>
+              <%= octicon "globe", height: 20, width: 20 %> Перейти на сайт
+            <% end %>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="nav-item">
+            <%= link_to admin_tests_path, class: 'nav-link' do %>
+              <%= octicon "light-bulb", height: 20, width: 20 %> Тесты 
+            <% end %>
+          </li>
+          <div class="dropdown-divider"></div>
+          <li class="nav-item">
+            <%= link_to admin_gists_path, class: 'nav-link' do %>
+              <%= octicon "octoface", height: 20, width: 20 %> Gists 
+            <% end %>
+          </li>
+          <div class="dropdown-divider"></div>
+        </ul>
+      </div> 
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+      <%= flash_message %>
+      <%= yield %>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row justify-content-center mt-4">
+  <div class="col col-md-4">
+    <div class="card shadow">
+      <div class="card-header">
+        <h3 class="text-center">Forgot your password?</h3>
+      </div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Введите Email", class: "form-control form-icon-input-left" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Send me reset password instructions", class: "btn btn-block btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

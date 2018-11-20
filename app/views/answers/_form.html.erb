@@ -1,17 +1,17 @@
-<%= form_with model: [@question, @answer], local: true do |form| %>
+<%= form_with model: [@question, @answer], local: true, class: 'col-4' do |form| %>
   <%= render 'shared/errors', resource: @answer %>
 
-  <div>
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :answer_title %>
+    <%= form.text_field :title, id: :answer_title, class: 'form-control' %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= form.label :correct %>
     <%= form.check_box :correct, id: :answer_correct %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Создать ответ', class: 'btn btn-success' %>
   </div>
 <% end %>

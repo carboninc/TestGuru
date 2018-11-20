@@ -1,7 +1,44 @@
+body {
+  padding-top: 65px;
+}
+
 .pointer {
   cursor: pointer;
 }
 
 .hide {
   display: none;
+}
+
+.octicon-chevron-left {
+  color: #007bff;
+}
+
+.text-muted {
+  font-size: 12px;
+}
+
+.test-bg {
+  width: 100%;
+  height: 250px;
+}
+
+.test-bg[data-category-ruby] {
+  background: url("tests/ruby.jpg") no-repeat center center;
+  background-size: contain;
+}
+
+.test-bg[data-category-htmlcss] {
+  background: url("tests/html.png") no-repeat center center;
+  background-size: contain;
+}
+
+.test-bg[data-category-javascript] {
+  background: url("tests/js.jpg") no-repeat center center;
+  background-size: contain;
+}
+
+.test-bg[data-category-rubyonrails] {
+  background: url("tests/ror.png") no-repeat center center;
+  background-size: contain;
 }

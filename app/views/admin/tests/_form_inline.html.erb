@@ -1,4 +1,7 @@
 <%= form_with model: [:admin, test], url: update_inline_admin_test_path(test), local: true, data: { test_id: test.id }, class: 'form-inline hide' do |form| %>
   <%= form.text_field :title, class: 'form-control mr-2' %>
   <%= form.submit t('.submit'), class: 'btn btn-primary' %>
+  <%= link_to edit_admin_test_path(test), data: { test_id: test.id }, class: 'form-inline-link ml-2', title: 'Отменить редактирование' do %>
+    <%= octicon "x", width: 25, height: 25 %>
+  <% end %>
 <% end %>

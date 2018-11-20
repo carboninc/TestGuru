@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails TestGuru: development" uuid="51716da1-60d7-4eb4-a095-8c7f03453d49">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
+      <first-sync>true</first-sync>
+      <user-name>carboninc</user-name>
+    </data-source>
+    <data-source name="Rails TestGuru: production" uuid="aad60203-f07e-4193-ae0f-5a36c4cbda87">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
+      <first-sync>true</first-sync>
+      <user-name>Testguru</user-name>
+    </data-source>
+    <data-source name="Rails TestGuru: test" uuid="31595736-207c-498c-8a2a-cb34fa17aac9">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="POSTGRES" exact-version="0.0" />
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>

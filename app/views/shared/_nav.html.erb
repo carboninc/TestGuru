@@ -1,15 +1,34 @@
-<nav class="navbar navbar-light bg-light">
-  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
-  <span class="navbar-text">
+<nav class="navbar navbar-light bg-light shadow-sm bg-white fixed-top">
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag "main/guru-logo.png", width: 30, height: 30, class: 'd-inline-block align-top', alt: 'Guru Logo' %>
+    TESTGURU
+  <% end %>
+
+  <ul class="nav justify-content-end">
     <% if user_signed_in? %>
       <% if current_user.admin? %>
-        <%= link_to 'Перейти в админ панель', admin_tests_path %> | 
+        <li class="nav-item">
+          <%= link_to 'Панель управления', admin_tests_path, class: 'nav-link border-right', style: 'padding-top: 10px;' %>
+        </li>
       <% end %>
-      Привет <b><%= current_user.email %></b> | <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= image_tag avatar_url(current_user), class: 'rounded-circle mr-1', width: '30', height: '30', alt: 'avatar' %>
+          <%= current_user.email %><i class="fa fa-angle-down small ml-1"></i>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to 'Редактировать профиль', edit_user_registration_path, class: 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Выход', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+        </div>
+      </li>
     <% else %>
-      <%= link_to 'Вход', new_user_session_path %> | <%= link_to 'Регистрация', new_user_registration_path %>
+      <li class="nav-item">
+        <%= link_to 'Вход', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link btn btn-outline-success' %>
+      </li>
     <% end %>
-     | <%= link_to 'Обратная связь', new_feedback_path%>
-  </span>
+  </ul>
 </nav>
-

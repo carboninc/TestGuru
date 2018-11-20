@@ -17,6 +17,11 @@ module ApplicationHelper
     end.join.html_safe
   end
 
+  def avatar_url(user)
+    gravatar_id = Digest::MD5.hexdigest(user.email).downcase
+    "https://s.gravatar.com/avatar/#{gravatar_id}.jpg?s=300"
+  end
+
   private
 
   BOOTSTRAP_FLASH_CLASS_MAPPING = {

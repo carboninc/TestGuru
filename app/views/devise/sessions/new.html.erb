@@ -1,8 +1,10 @@
-<div class="row justify-content-center mt-3">
+<div class="row justify-content-center mt-4">
   <div class="col col-md-4">
-    <h2>Вход на сайт</h2>
 
-    <div class="card border-primary">
+    <div class="card shadow">
+      <div class="card-header">
+        <h3 class="text-center">Вход на сайт</h3>
+      </div>
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
@@ -13,7 +15,7 @@
 
             <p>
               <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Введите пароль' %>
             </p>
 
             <% if devise_mapping.rememberable? -%>
@@ -25,14 +27,14 @@
               </div>
             <% end -%>
           
-            <%= f.submit "Войти", class: 'btn btn-primary' %>
+            <%= f.submit "Войти", class: 'btn btn-primary btn-block mt-3' %>
+          </div>
+
+          <div class="mt-1">
+            <%= render "devise/shared/links" %>
           </div>
         <% end %>
       </div>
-    </div>
-
-    <div class="mt-1">
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

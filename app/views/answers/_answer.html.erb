@@ -1,6 +1,7 @@
-<li>
-  <%= answer.title %><br>
-  <%= link_to 'Показать', answer_path(answer) %>
-  <%= link_to 'Редактировать', edit_answer_path(answer) %>
-  <%= link_to 'Удалить', answer_path(answer), method: :delete, data: { confirm: 'Вы уверены?' } %>
-</li>
+<tr>
+  <td class="align-middle"><%= answer.id %></td>
+  <td class="align-middle"><%= answer.title %></td>
+  <td class="align-middle"><%= link_to 'Показать', answer_path(answer) %></td>
+  <td class="align-middle"><%= link_to 'Редактировать', edit_answer_path(answer) %></td>
+  <td class="align-middle"><%= link_to 'Удалить', answer_path(answer), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %></td>
+</tr>

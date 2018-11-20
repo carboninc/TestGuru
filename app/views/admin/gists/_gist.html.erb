@@ -1,8 +1,9 @@
 <tbody>
-      <tr>
-        <td><%= gist.id %></td>
-        <td><%= gist.user.email %></td>
-        <td><%= link_to truncate(gist.question.body, length: 25), question_path(gist.question) %></td>
-        <td><%= link_to gist.gist_url, gist.gist_url %></td>
-      </tr>
-    </tbody>
+  <tr>
+    <td><%= gist.id %></td>
+    <td><%= gist.user.email %></td>
+    <td><%= link_to truncate(gist.question.body, length: 25), question_path(gist.question), title: gist.question.body %></td>
+    <td><%= link_to gist.gist_url, gist.gist_url %></td>
+    <td><%= button_to 'Удалить', admin_gist_path(gist), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %></td>
+  </tr>
+</tbody>
