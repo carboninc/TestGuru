@@ -24,22 +24,22 @@ body {
 }
 
 .test-bg[data-category-ruby] {
-  background: url("tests/ruby.jpg") no-repeat center center;
+  background: image-url("tests/ruby.jpg") no-repeat center center;
   background-size: contain;
 }
 
 .test-bg[data-category-htmlcss] {
-  background: url("tests/html.png") no-repeat center center;
+  background: image-url("tests/html.png") no-repeat center center;
   background-size: contain;
 }
 
 .test-bg[data-category-javascript] {
-  background: url("tests/js.jpg") no-repeat center center;
+  background: image-url("tests/js.jpg") no-repeat center center;
   background-size: contain;
 }
 
 .test-bg[data-category-rubyonrails] {
-  background: url("tests/ror.png") no-repeat center center;
+  background: image-url("tests/ror.png") no-repeat center center;
   background-size: contain;
 }
 
