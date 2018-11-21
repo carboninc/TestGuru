@@ -1,0 +1,23 @@
+<div class="card text-center shadow-sm">
+  <div class="card-body">
+    <%= image_tag avatar_url(current_user), class: 'rounded-circle mr-1 shadow', width: '100', height: '100', alt: 'avatar' %>
+    <p class="mt-4"><b><%= current_user.email %></b></p>
+  </div>
+  <div class="card-footer">
+    <h5><span class="badge badge-pill <%= current_user.admin? ? 'badge-danger' : 'badge-primary' %>"><%= current_user.type %></span></h5>
+  </div>
+</div>
+
+<div class="card shadow-sm mt-4">
+  <div class="card-body">
+    <h4 class="text-center">Меню</h4>
+    <ul class="nav flex-column py-2">
+      <li class="nav-item border-bottom border-top py-2">
+        <%= link_to 'Награды', root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item border-bottom py-2">
+        <%= link_to 'Настройки', edit_user_registration_path, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</div>
