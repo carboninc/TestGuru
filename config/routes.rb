@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: :create
   resources :sessions, only: :create
   resources :feedbacks, only: :create
+  resources :user_badges, only: :index
 
   resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
@@ -29,5 +30,6 @@ Rails.application.routes.draw do
       patch :update_inline, on: :member
     end
     resources :gists, only: %i[index destroy]
+    resources :badges
   end
 end

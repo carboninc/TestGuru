@@ -28,6 +28,9 @@ class TestPassage < ApplicationRecord
     test.questions.count - last_questions.count
   end
 
+  scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
+  scope :by_category, ->(category) { joins(:test).where(tests: { category: category }) }
+
   private
 
   def before_validation_set_question

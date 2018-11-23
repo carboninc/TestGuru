@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-3 mt-4">
+    <%= render 'shared/profile_nav' %>
+  </div>
+  <div class="col-9">
+    <div class="row justify-content-center mt-4">
+      <div class="col col-md-12">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            <h3 class="text-center">Ваши награды</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <%= render @user_badges %>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2">
+          <%= octicon "chevron-left" %> <%= link_to "Back", :back %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
