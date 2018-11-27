@@ -29,6 +29,18 @@ class TestPassage < ApplicationRecord
     test.questions.count - last_questions.count
   end
 
+  def test_timer_over?
+    end_of_test_time <= 0
+  end
+
+  def end_of_test_time
+    test_timer - Time.current
+  end
+
+  def test_timer
+    created_at + test.timer * 60
+  end
+
   scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
   scope :by_category, ->(category) { joins(:test).where(tests: { category: category }) }
 

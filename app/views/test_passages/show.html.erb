@@ -48,7 +48,13 @@
         <b>До конца теста осталось</b>
       </div>
       <div class="card-body">
-        <h1 class="text-center">15:00</h1>
+        <% if @test_passage.test.timer.nil? %>
+          <h4 class="text-center">Не ограниченно!</h4>
+        <% else %>
+          <%= content_tag :h1, class: 'text-center timer', data: { time: @test_passage.end_of_test_time } do %>
+            <span class="minutes"></span>:<span class="seconds"></span>
+          <% end %>
+        <% end %>
       </div>
     </div>
 

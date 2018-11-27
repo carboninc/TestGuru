@@ -11,6 +11,7 @@
   <td class="align-middle"><%= test.questions.count %></td>
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.category.title %></td>
+  <td class="align-middle"><%= test.timer.nil? ? 'Без времени' : test.timer %></td>
   <td class="align-middle"><%= link_to t('.show_questions'), admin_test_path(test) %></td>
   <td class="align-middle"><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
   <td class="align-middle"><%= link_to t('.delete'), admin_test_path(test), method: :delete, data: { confirm: t('.confirm_delete') }, class: 'btn btn-danger' %></td>
