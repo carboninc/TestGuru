@@ -30,15 +30,13 @@ class TestPassage < ApplicationRecord
   end
 
   def test_timer_over?
+    return false if test.timer.nil?
+    
     end_of_test_time <= 0
   end
 
   def end_of_test_time
     test_timer - Time.current
-  end
-
-  def test_timer
-    created_at + test.timer * 60
   end
 
   scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
@@ -69,5 +67,9 @@ class TestPassage < ApplicationRecord
 
   def mark_completed
     self.completed = completed? && test_passed?
+  end
+
+  def test_timer
+    created_at + test.timer * 60
   end
 end
