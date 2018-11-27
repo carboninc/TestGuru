@@ -57,7 +57,5 @@ class TestPassage < ApplicationRecord
 
   def mark_completed
     self.completed = completed? && test_passed?
-    p self
-    p.complete
   end
 end
