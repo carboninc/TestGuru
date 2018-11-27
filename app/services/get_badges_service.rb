@@ -21,20 +21,20 @@ class GetBadgesService
   def reward_by_level?
     test = Test.find_by(level: @test.level)
 
-    test.level == @test.level && Test.where(level: @test.level).count == completed_levels(@user, @test.level)
+    @test_passage.test_passed? && test.level == @test.level && Test.where(level: @test.level).count == completed_levels(@user, @test.level)
   end
 
   def reward_category?
     category = Category.find_by(title: @test.category.title)
 
-    (category == @test.category) && (Test.where(category: category).count == completed_categories(@user, category))
+    @test_passage.test_passed? && (category == @test.category) && (Test.where(category: category).count == completed_categories(@user, category))
   end
 
   def completed_categories(user, category)
-    user.test_passages.by_category(category).group(:test).count.keys.size
+    user.test_passages.by_category(category).where(completed: true).group(:test).count.keys.size
   end
 
   def completed_levels(user, level)
-    user.test_passages.by_level(level).group(:test).count.keys.size
+    user.test_passages.by_level(level).where(completed: true).group(:test).count.keys.size
   end
 end

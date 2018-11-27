@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_question, on: %i[create update]
+  before_save :mark_completed, on: :update
 
   SUCCESS_POINTS = 85
 
@@ -52,5 +53,9 @@ class TestPassage < ApplicationRecord
 
   def last_questions
     test.questions.order(:id).where('id > ?', current_question.id)
+  end
+
+  def mark_completed
+    self.completed = completed? && test_passed?
   end
 end
