@@ -1,28 +1,37 @@
 <h1>Вопрос к тесту <%= @question.test.title %></h1>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Вопрос</th>
-    <th>Тест</th>
-    <th colspan="3">Действия</th>
-  </tr>
+<div class="table-responsive mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Вопрос</th>
+        <th>Тест</th>
+        <th colspan="3">Действия</th>
+      </tr>
+    </thead>
 
-  <tr>
-    <td><%= @question.id %></td>
-    <td><%= @question.body %></td>
-    <td><%= @question.test.title %></td>
-    <td><%= link_to 'Редактировать', edit_question_path %></td>
-    <td><%= link_to 'Удалить', question_path(@question), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-  </tr>
-</table>
+    <tr>
+      <td class="align-middle"><%= @question.id %></td>
+      <td class="align-middle"><%= @question.body %></td>
+      <td class="align-middle"><%= @question.test.title %></td>
+      <td class="align-middle"><%= link_to 'Редактировать', edit_question_path %></td>
+      <td class="align-middle"><%= link_to 'Удалить', question_path(@question), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %></td>
+    </tr>
+  </table>
+</div>
+
 
 <h2>Ответы:</h2>
 
-<%= link_to 'Новый ответ', new_question_answer_path(@question) %>
+<%= link_to 'Новый ответ', new_question_answer_path(@question), class: 'btn btn-success' %>
 
-<ol>
-  <%= render @question.answers %>
-</ol>
+<div class="table-responsive mt-3">
+  <table class="table">
+    <thead>
+      <%= render @question.answers %>
+    </thead>
+  </table>
+</div>
 
-<%= link_to 'Назад', admin_test_path(@question.test) %>
+<%= octicon "chevron-left" %> <%= link_to 'Назад', admin_test_path(@question.test) %>

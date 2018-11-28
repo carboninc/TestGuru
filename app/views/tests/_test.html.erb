@@ -1,10 +1,23 @@
-<tbody>
-  <tr>
-    <td><%= test.id %></td>
-    <td><%= test.title %></td>
-    <td><%= test.questions.count %></td>
-    <td><%= test.level %></td>
-    <td><%= test.category.title %></td>
-    <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-success' %></td>
-  </tr>
-</tbody>
+<div class="col-4 d-flex align-content-stretch mt-4">
+  <div class="card shadow w-100">
+    <div class="card-body">
+      <div class="test-bg" data-category-<%= test.category.title.gsub(/[ &]/, "") %>></div>
+      <h4 class="text-center mt-4"><b><%= test.title %></b></h4>
+      <div class="dropdown-divider mt-3"></div>
+      <%= button_to t('.start'), start_test_path(test), class: 'btn btn-success btn-block mt-3' %>
+    </div>
+    <div class="card-footer text-muted">
+      <div class="row">
+        <div class="col-4 text-center">
+          <b><%= test.category.title %></b>
+        </div>
+        <div class="col-4 text-center border-left">
+          <b>Уровень:</b> <%= test.level %>
+        </div>
+        <div class="col-4 text-center border-left">
+          <b>Вопросов:</b> <%= test.questions.count %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

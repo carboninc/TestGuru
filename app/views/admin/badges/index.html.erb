@@ -1,0 +1,21 @@
+<h1>Награды</h1>
+
+<div>
+  <%= link_to 'Создать новую награду', new_admin_badge_path, class: 'btn btn-success' %>
+</div>
+
+<div class="table-responsive">
+  <table class="table mt-3">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Изображение</th>
+      <th>Правило</th>
+      <th colspan="2">Действия</th>
+    </tr>
+    </thead>
+
+    <%= render @badges %>
+  </table>
+</div>

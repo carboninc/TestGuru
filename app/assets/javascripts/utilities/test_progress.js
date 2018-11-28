@@ -10,4 +10,4 @@ document.addEventListener('turbolinks:load', function() {
     progressBar.style.width = width;
     progressBar.textContent = width;
   }
-})
+});

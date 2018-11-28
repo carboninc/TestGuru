@@ -1,23 +1,10 @@
-<h1><%= t('tests.index.header') %></h1>
+<h1 class="text-center mt-4"><%= t('tests.index.header') %></h1>
 
-<div class="table-responsive">
-  <table class="table mt-3">
-    <thead>
-      <tr>
-      <th>ID</th>
-      <th class="sort-by-title pointer">
-        <%= t('.test') %>
-        <%= octicon 'arrow-up', class: 'text-success hide' %>
-        <%= octicon 'arrow-down', class: 'text-success hide' %>
-      </th>
-      <th><%= t('.number_if_question') %></th>
-      <th><%= t('.level') %></th>
-      <th><%= t('.category') %></th>
-      <th><%= t('.actions') %></th>
-    </tr>
-    </thead>
-
-    <%= render @tests %>
-  </table>
+<div class="row">
+  <%= render @tests %>
 </div>
+
+<%= render 'shared/feedback' %>
+
+
 

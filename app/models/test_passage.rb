@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_question, on: %i[create update]
+  before_save :mark_completed, on: :update
 
   SUCCESS_POINTS = 85
 
@@ -28,6 +29,19 @@ class TestPassage < ApplicationRecord
     test.questions.count - last_questions.count
   end
 
+  def test_timer_over?
+    return false if test.timer.nil?
+    
+    end_of_test_time <= 0
+  end
+
+  def end_of_test_time
+    test_timer - Time.current
+  end
+
+  scope :by_level, ->(level) { joins(:test).where(tests: { level: level }) }
+  scope :by_category, ->(category) { joins(:test).where(tests: { category: category }) }
+
   private
 
   def before_validation_set_question
@@ -49,5 +63,13 @@ class TestPassage < ApplicationRecord
 
   def last_questions
     test.questions.order(:id).where('id > ?', current_question.id)
+  end
+
+  def mark_completed
+    self.completed = completed? && test_passed?
+  end
+
+  def test_timer
+    created_at + test.timer * 60
   end
 end

@@ -1,0 +1,10 @@
+<tbody>
+<tr>
+  <td class="align-middle"><%= badge.id %></td>
+  <td class="align-middle"><%= badge.name %></td>
+  <td class="align-middle"><%= image_tag("badges/#{badge.image.downcase}.png", size: "64x64") %></td>
+  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle"><%= link_to 'Редактировать', edit_admin_badge_path(badge) %></td>
+  <td class="align-middle"><%= button_to 'Удалить', admin_badge_path(badge), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %></td>
+</tr>
+</tbody>
